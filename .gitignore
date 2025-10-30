@@ -1,0 +1,32 @@
+# Build results
+bin/
+obj/
+
+# User-specific files
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Logs and temporary files
+*.log
+*.tlog
+*.tmp
+
+# vscode settings (optional)
+.vscode/
+*.DotSettings.user
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Dotnet secrets / environment stuff
+secrets.json
+
+
+# Test results
+TestResults/
+*.coverage
+*.coveragexml

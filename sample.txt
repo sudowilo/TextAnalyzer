@@ -1,0 +1,8 @@
+The quick brown fox jumps over the lazy dog.
+This sentence contains every letter of the English alphabet!
+
+C# is a modern, object-oriented programming language developed by Microsoft.
+It is used for building web applications, desktop apps, games, and much more.
+
+Learning C# can be fun, especially when you build small projects like this one.
+Practice is the key to becoming a better developer.
