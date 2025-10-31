@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Reflection.Metadata;
 
 class Program
 {
@@ -20,25 +21,42 @@ class Program
     int linesCount = 0;
     int nonSpaceCharactersCount = 0;
     int charactersCount = 0;
-    
+    int wordsCount = 0;
+
+    bool previousCharSpaceValue = false;
+    bool lineHasValue = false;
+
     string? line;
     while ((line = reader.ReadLine()) != null)
     {
       charactersCount += line.Length;
-      
+
       foreach (var character in line)
       {
-        if (!(character == ' '))
+        lineHasValue = true; 
+        if (character == ' ')
         {
+          if (!previousCharSpaceValue)
+          {
+            previousCharSpaceValue = true;
+            ++wordsCount;
+          }
+        }
+        else
+        {
+          previousCharSpaceValue = false;
           ++nonSpaceCharactersCount;
         }
       }
-      
+
+      if (lineHasValue) ++wordsCount;  //In this way we can add the last word on the line (if there is any word).
       ++linesCount;
+      lineHasValue = false;
     }
 
     Console.WriteLine("number of lines: " + linesCount);
     Console.WriteLine("number of characters: " + (charactersCount + linesCount - 1)); //For \n characters
     Console.WriteLine("number of non-space characters: " + nonSpaceCharactersCount);
+    Console.WriteLine("number of words: " + wordsCount);
   }
 }
